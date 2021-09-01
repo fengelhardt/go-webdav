@@ -1,0 +1,9 @@
+{
+	UsersFile: ./test/users.hjson
+	TLSCertFile: ./test/testcert.pem
+	TLSKeyFile: ./test/testkey.pem
+	Realm: example.com
+	URIPrefix: webdav
+	BaseDir: /tmp/srv
+	Port: 9999
+} 

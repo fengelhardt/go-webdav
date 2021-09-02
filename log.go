@@ -1,5 +1,7 @@
 package main
 
+// (c) 2021 Frank Engelhardt, <frank@f9e.de>
+
 import (
 	"fmt"
 	"log"

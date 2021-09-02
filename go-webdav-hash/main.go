@@ -1,17 +1,19 @@
 package main
 
+// (c) 2021 Frank Engelhardt, <frank@f9e.de>
+
 import (
-	"fmt"
-	"flag"
 	"bytes"
-	"os"
 	"encoding/base64"
-	
-	"golang.org/x/term"
+	"flag"
+	"fmt"
+	"os"
+
 	"golang.org/x/crypto/sha3"
+	"golang.org/x/term"
 )
 
-func main () {
+func main() {
 	flag.Parse()
 	username := ""
 	if len(os.Args) > 1 {
@@ -22,9 +24,9 @@ func main () {
 		fmt.Scanln(&username)
 	}
 	fmt.Printf("Please enter the passsword for user %s: ", username)
-	password,_ := term.ReadPassword(0)
+	password, _ := term.ReadPassword(0)
 	fmt.Printf("\nPlease re-type the passsword: ")
-	password2,_ := term.ReadPassword(0)
+	password2, _ := term.ReadPassword(0)
 	if bytes.Compare(password, password2) == 0 {
 		data := fmt.Sprintf("%s:%s", username, password)
 		b64data := base64.StdEncoding.EncodeToString([]byte(data))

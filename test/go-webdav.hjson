@@ -1,9 +1,18 @@
 {
+	// The users config file is for user administraion.
 	UsersFile: ./test/users.hjson
+	// TLS certificate
 	TLSCertFile: ./test/testcert.pem
+	// TLS private key
 	TLSKeyFile: ./test/testkey.pem
+	// Realm that is presented to the user for authentication.
 	Realm: example.com
+	// The path prefix of the URI to listen to,
+	// e.g., here we listen to webdavs://<servername>:9999/webdav
 	URIPrefix: webdav
+	// The directory where the server should put its data.
+	// It should exist and be initially empty.
 	BaseDir: /tmp/srv
+	// Server port to listen to, e.g., 443 for HTTPS.
 	Port: 9999
 } 

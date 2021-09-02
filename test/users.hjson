@@ -1,4 +1,7 @@
 {
+	// Format:
+	// <UserName>: {Hash: <sha3 hash generaed with go-webdav-hash>, Quota: <Amount in B>}
+
 	bob: {
 		Hash: 4f4a2bf03b3630cb2a50a004b833796d84b310bf5f8d42495795f473a77fc21226f9a0a7d021a82449985f8d888be4deb883ba532b1bd09015c2572e9b198193
 		Quota: 4G

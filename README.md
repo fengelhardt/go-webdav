@@ -34,7 +34,7 @@ Now run the server by telling it where the config file is:
 
 You can now browse `webdavs://localhost:9999/webdav` with your avorite WebDAV client.
 
-You have to accept the test license, which is in no way secure, but there for testing purposes.
+You have to accept the test certificate, which is in no way secure, but there for testing purposes.
 Use either "alice" (pwd: alice) or "bob" (pwd: bob) for credentials.
 
 You can see now that in the `/tmp/srv` folder the uploaded files are placed,

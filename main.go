@@ -28,7 +28,7 @@ func main() {
 		return
 	}
 	h := &webdav.Handler{
-		FileSystem: newUserDirFileSystem(),
+		FileSystem: newUserDirFileSystem(gConfig.ReadOnly, gConfig.SingleUserMode),
 		LockSystem: webdav.NewMemLS(),
 		Logger:     accessLoggerFunc,
 	}

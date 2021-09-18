@@ -15,4 +15,10 @@
 	BaseDir: /tmp/srv
 	// Server port to listen to, e.g., 443 for HTTPS.
 	Port: 9999
+	// Read-Only mode: no write operations allowed for clients.
+	ReadOnly: false
+	// Single User Mode: This mode is meant to share an existing folder
+	// via WebDAV. No files/folders are created by the server; just the 
+	// operations issued by the users are executed on the shared folder.
+	SingleUserMode: false
 } 

@@ -10,13 +10,15 @@ import (
 )
 
 type Config struct {
-	UsersFile   string `json:"UsersFile"`
-	TLSCertFile string `json:"TLSCertFile"`
-	TLSKeyFile  string `json:"TLSKeyFile"`
-	Realm       string `json:"Realm"`
-	BaseDir     string `json:"BaseDir"`
-	URIPrefix   string `json:"URIPrefix"`
-	Port        uint16 `json:"Port"`
+	UsersFile      string `json:"UsersFile"`
+	TLSCertFile    string `json:"TLSCertFile"`
+	TLSKeyFile     string `json:"TLSKeyFile"`
+	Realm          string `json:"Realm"`
+	BaseDir        string `json:"BaseDir"`
+	URIPrefix      string `json:"URIPrefix"`
+	Port           uint16 `json:"Port"`
+	ReadOnly       bool   `json:"ReadOnly"`
+	SingleUserMode bool   `json:"SingleUserMode"`
 }
 
 func staticConfFiles() []string {

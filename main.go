@@ -15,17 +15,18 @@ import (
 
 func main() {
 	flag.Parse()
-	log.SetFlags(0)
 	var err error
 	gConfig, err = loadConfig(*gConfFile)
 	if err != nil {
 		log.Fatal(err)
-		return
 	}
 	gUserConfig, err = loadUserConfig(gConfig.UsersFile)
 	if err != nil {
 		log.Fatal(err)
-		return
+	}
+	err = initializeLogger()
+	if err != nil {
+		log.Fatal(err)
 	}
 	h := &webdav.Handler{
 		FileSystem: newUserDirFileSystem(gConfig.ReadOnly, gConfig.SingleUserMode),
@@ -48,7 +49,9 @@ func main() {
 	}))
 
 	addr := fmt.Sprintf(":%d", gConfig.Port)
-	log.Printf("Serving %v%s", addr, gConfig.URIPrefix)
-	log.Fatal(http.ListenAndServeTLS(addr, gConfig.TLSCertFile, gConfig.TLSKeyFile, nil))
-	//log.Fatal(http.ListenAndServe(addr, nil))
+	gLogger.Printf("Serving %v%s", addr, gConfig.URIPrefix)
+	if gConfig.LogFile == "" {
+		gLogger.Println("Logging is disabled")
+	}
+	gLogger.Fatal(http.ListenAndServeTLS(addr, gConfig.TLSCertFile, gConfig.TLSKeyFile, nil))
 }

@@ -19,6 +19,7 @@ type Config struct {
 	Port           uint16 `json:"Port"`
 	ReadOnly       bool   `json:"ReadOnly"`
 	SingleUserMode bool   `json:"SingleUserMode"`
+	LogFile        string `json:"LogFile"`
 }
 
 func staticConfFiles() []string {
@@ -73,7 +74,7 @@ func checkConfig(c *Config) error {
 			}
 		}
 	} else {
-		return err
+		return fmt.Errorf("BaseDir %q does not point to a directory", c.BaseDir)
 	}
 	return nil
 }

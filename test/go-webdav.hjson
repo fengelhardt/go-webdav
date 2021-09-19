@@ -21,4 +21,9 @@
 	// via WebDAV. No files/folders are created by the server; just the 
 	// operations issued by the users are executed on the shared folder.
 	SingleUserMode: false
+	// The name of the log file. It will be created if it does not exist.
+	// The process needs the proper file permissions.
+	// An empty string means no logging at all. 
+	// The special string "-" means logging to stdout.
+	LogFile: ""
 } 

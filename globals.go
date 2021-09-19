@@ -4,10 +4,12 @@ package main
 
 import (
 	"flag"
+	"log"
 )
 
 var gConfig Config
 var gUserConfig UserConfig
+var gLogger *log.Logger
 
 const (
 	gUserDirPerm = 0775
